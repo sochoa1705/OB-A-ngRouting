@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,9 +9,13 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  email:string = ''; //eve.holt@reqres.in
+  password:string = ''; //cityslicka
+
+  constructor(private router:Router, private authService:AuthService) { }
 
   ngOnInit(): void {
+    
     let tokenAuth = sessionStorage.getItem('isLoggedInToken');
     if(tokenAuth){
       this.router.navigate(['/home']);
@@ -19,8 +24,18 @@ export class LoginPageComponent implements OnInit {
   }
 
   loginUser(){
-    sessionStorage.setItem('isLoggedInToken', '123456789');
-    this.router.navigate(['/contacts']);
+
+    this.authService.login(this.email,this.password).subscribe(
+      (response:any) => {
+        if(response.token){
+          sessionStorage.setItem('isLoggedInToken', response.token);
+          this.router.navigate(['/home']);
+        }
+
+      },
+      (error:any) => console.error(`Something went wrong while try to Login: ${error} `),
+      () => console.info('Login completed')
+    )
   }
 
 }

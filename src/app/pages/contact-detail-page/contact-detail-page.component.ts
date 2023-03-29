@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import Activeated Route
 import { ActivatedRoute } from '@angular/router';
+import { IContact } from 'src/app/models/contact.interface';
 
 @Component({
   selector: 'app-contact-detail-page',
@@ -10,6 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactDetailPageComponent implements OnInit {
 
   id: any | undefined;
+  contact: IContact = {
+    id: 0,
+    name: '',
+    lastname: '',
+    mail: '',
+    gender: ''
+  };
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -22,6 +30,11 @@ export class ContactDetailPageComponent implements OnInit {
           this.id = params['id'];
         }
       });
+      //read the state from contact page
+      if(history.state.data){
+        this.contact = history.state.data;
+      }
+
   }
 
 }

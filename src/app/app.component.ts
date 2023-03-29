@@ -21,3 +21,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 }
+
+
+//Passing info between components
+// 1. using @Input() and @Output() decorators
+// 2. using injectable constructors of components
+// 3. using services (promises, observables, etc.) -- NGXS, NGRX, etc. (Manage state of the application)
+// 4. passing parameters in the URL (routes)

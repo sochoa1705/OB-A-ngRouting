@@ -1,11 +1,32 @@
-<h1>Home Page!</h1>
+<h1>Secret Santa Game!</h1>
 
-<h3>Welcome</h3>
+<h3 >Welcome!</h3>
+
+<ng-container *ngIf="contactSelected; else nonSelected">
+    <h4>Secret Santa: {{contactSelected.name+ ' ' + contactSelected.lastname}}</h4> 
+</ng-container>
+
+<ng-template #nonSelected>
+    <div>
+        <p>Select a secret friend</p>
+    </div>
+</ng-template>
 
 <!-- Make a login link -->
-<a routerLink="/login">Login</a>
+<a *ngIf="!token" routerLink="/login">Login</a>
 <br>
-<br>
-<br>
-<br>
+<hr>
 <button (click)="navToContacts()">See Contacts</button>
+<hr>
+<div>
+    <span>
+        <a routerLink="/contacts" [queryParams]="{filter: 'female'}">Female Friends |</a>
+    </span>
+    <span>
+        <a routerLink="/contacts" [queryParams]="{filter: 'male'}"> Male Friends</a>
+    </span>
+</div>
+
+<br>
+<br> 
+

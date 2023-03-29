@@ -1,3 +1,21 @@
-<h1>Contact: {{id}}</h1>
-<h2>Name: </h2>
-<h2>Mail: </h2>
+<ng-container *ngIf="contact.mail;else nonContactMail">
+    
+    <h1>Contact: {{id}}</h1>
+    <hr>
+    <h2>Name: {{contact.name}}</h2>
+    <h2>Lastname: {{contact.lastname}}</h2>
+    <h3>Mail: {{contact.mail}}</h3>
+    <h4>Gender: {{contact.gender}}</h4>
+
+</ng-container>
+
+<ng-template #nonContactMail>
+    <p>Error trying to get contact info</p>
+</ng-template>
+<ng-container *ngIf=" contact.gender=='female' || contact.gender == 'male'">
+    <a routerLink="/contacts" [queryParams]="{filter:contact.gender}">Regresar</a>
+</ng-container>
+<hr>
+<a routerLink="/contacts" [queryParams]="{filter:'all'}">See Contacts</a>
+
+

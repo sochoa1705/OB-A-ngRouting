@@ -2,23 +2,37 @@
 
 <!-- Build a view that list the contact list and navigate to
 detail page -->
-<div *ngFor="let contact of contactList; let i-index">
+<div *ngFor="let contact of contactList; let i-index"class="blueTable">
     <div class="contact">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Info</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{contact.name}}</td>
-                <td>{{contact.lastname}}</td>
-                <td>{{contact.mail}}</td>
-                <td> <a routerLink="/contacts/{{contact.id}}">Detail</a></td>
-            </tr>
-        </tbody>
+        <table  class="blueTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.lastname}}</td>
+                    <td>{{contact.mail}}</td>
+                    <td> <a routerLink="/contacts/{{contact.id}}" [state]="{data: contact}">Detail</a></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <button (click)="backToHome(contact)">Select as a friend</button>
+                    </td>
+                </tr>
+            </tfoot>     
+        </table>
+        <br>
     </div>
 </div>
+<br>
+<br>
+<br>
+

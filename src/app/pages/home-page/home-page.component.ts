@@ -1,6 +1,8 @@
+import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 //import router 
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
+import { IContact } from 'src/app/models/contact.interface';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -8,13 +10,28 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
+  contactSelected: IContact | undefined;
+  token: string | null ="";
+
   constructor( private router: Router) { }
 
   ngOnInit() {
+    //Probe the session token exists
+    this.token = sessionStorage.getItem('isLoggedInToken');
+    //Read the state
+    if(history.state.data) {
+      this.contactSelected = history.state.data;
+      console.log(this.contactSelected);
+    }
   }
 
 navToContacts(): void {
-    this.router.navigate(['/contacts']);
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        filter: 'all'
+      }
+    }
+    this.router.navigate(['/contacts'], navigationExtras);
   }
 
 

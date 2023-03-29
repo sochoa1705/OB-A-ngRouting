@@ -22,7 +22,8 @@ const routes: Routes = [
         path: 'children',
         component: HomePageComponent
       }
-    ]
+    ],
+    canActivate: [AuthGuard]
   },
   {
     path: 'contacts',
