@@ -1,0 +1,24 @@
+<h1>Contacts</h1>
+
+<!-- Build a view that list the contact list and navigate to
+detail page -->
+<div *ngFor="let contact of contactList; let i-index">
+    <div class="contact">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{contact.name}}</td>
+                <td>{{contact.lastname}}</td>
+                <td>{{contact.mail}}</td>
+                <td> <a routerLink="/contacts/{{contact.id}}">Detail</a></td>
+            </tr>
+        </tbody>
+    </div>
+</div>
