@@ -3,7 +3,7 @@
 <h3 >Welcome!</h3>
 
 <ng-container *ngIf="contactSelected; else nonSelected">
-    <h4>Secret Santa: {{contactSelected.name+ ' ' + contactSelected.lastname}}</h4> 
+    <h4>Secret Santa: {{contactSelected|fullName}}</h4> 
 </ng-container>
 
 <ng-template #nonSelected>

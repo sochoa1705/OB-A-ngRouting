@@ -1,7 +1,9 @@
-<h1>Login Page</h1>
 
 
 <!-- Login Form -->
-<input [(ngModel)]="email" type="email" placeholder="Email" />
-<input [(ngModel)]="password" type="email" placeholder="Password" />
-<button (click)="loginUser()">Login</button>
+<!-- <input [(ngModel)]="email" type="email" placeholder="Email" /> -->
+<!-- <input [(ngModel)]="password" type="email" placeholder="Password" /> -->
+<!-- <button (click)="loginUser()">Login</button> -->
+
+<!-- Painting LoginForm Component -->
+<app-login-form (loginAction)="loginUser($event)"></app-login-form>

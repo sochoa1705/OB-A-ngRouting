@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule} from './modules/material/material.module';
 //import httpClientModule
 import { HttpClientModule } from '@angular/common/http';
 
@@ -10,7 +12,12 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-detail-page.component';
-import { FormsModule } from '@angular/forms';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FullNamePipe } from './pipes/full-name.pipe';
+//import mat header row module
+
+
 
 @NgModule({
   declarations: [
@@ -19,13 +26,19 @@ import { FormsModule } from '@angular/forms';
     LoginPageComponent,
     NotFoundPageComponent,
     ContactsPageComponent,
-    ContactDetailPageComponent
+    ContactDetailPageComponent,
+    LoginFormComponent,
+    FullNamePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MaterialModule,  //Personalized Module
+    BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
