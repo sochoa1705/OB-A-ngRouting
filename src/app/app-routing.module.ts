@@ -6,6 +6,7 @@ import { ContactsPageComponent } from './pages/contacts-page/contacts-page.compo
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { RandomCotactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 const routes: Routes = [
   //main route to home
@@ -34,6 +35,11 @@ const routes: Routes = [
     //subroute passing id its not a query param
     path: 'contacts/:id',
     component: ContactDetailPageComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path:'random',
+    component: RandomCotactPageComponent,
     canActivate: [AuthGuard]
   },
   {

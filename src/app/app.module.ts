@@ -15,6 +15,8 @@ import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FullNamePipe } from './pipes/full-name.pipe';
+import { RandomUserComponent } from './components/random-user/random-user.component';
+import { RandomCotactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 //import mat header row module
 
 
@@ -28,7 +30,9 @@ import { FullNamePipe } from './pipes/full-name.pipe';
     ContactsPageComponent,
     ContactDetailPageComponent,
     LoginFormComponent,
-    FullNamePipe
+    FullNamePipe,
+    RandomUserComponent,
+    RandomCotactPageComponent
   ],
   imports: [
     BrowserModule,

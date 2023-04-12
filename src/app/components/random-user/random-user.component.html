@@ -1,0 +1,33 @@
+<h4>Random Contact Api by randomuser.me</h4>
+
+<ng-container *ngIf="randomContact; else noContact">
+    <mat-card class="random-contact-card">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <img mat-card-image src="{{randomContact.picture.thumbnail}}" alt="Photo of {{randomContact.name.first}}">
+          </div>
+          <mat-card-title>
+            {{randomContact.name.title}}
+            {{randomContact.name.first}}
+            {{randomContact.name.last}}
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{randomContact.email}}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{randomContact.location.country}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="warn">SELECT AS SECRET SANTA</button>
+          <button mat-button color="primary">BACK</button>
+        </mat-card-actions>
+      </mat-card>
+</ng-container>
+<ng-template #noContact>
+    <mat-spinner></mat-spinner>
+</ng-template>
+
+

@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": { "title": "Ms", "first": "Saskia", "last": "Münster" },
+      "location": {
+        "street": { "number": 9690, "name": "Kastanienweg" },
+        "city": "Solms",
+        "state": "Sachsen",
+        "country": "Germany",
+        "postcode": 27301,
+        "coordinates": { "latitude": "-48.2120", "longitude": "175.0416" },
+        "timezone": { "offset": "+4:30", "description": "Kabul" }
+      },
+      "email": "saskia.munster@example.com",
+      "login": {
+        "uuid": "d9caf7dc-3680-419f-bf69-207795dbf559",
+        "username": "organiccat111",
+        "password": "gggggggg",
+        "salt": "yFagK707",
+        "md5": "e49d28acdce030d4a71bc5b9e99d68d9",
+        "sha1": "9843a6dfd8e127118a69887ee6ee49fdde4a5d7e",
+        "sha256": "2102bea7ec2ab5ddf44e1d7ccc05b87d10c33bd7a94413865e907e41e5c7dda2"
+      },
+      "dob": { "date": "1972-09-19T09:53:00.898Z", "age": 50 },
+      "registered": { "date": "2011-11-19T03:14:58.922Z", "age": 11 },
+      "phone": "0387-9335238",
+      "cell": "0171-0387881",
+      "id": { "name": "SVNR", "value": "63 190972 M 737" },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/56.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/56.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/56.jpg"
+      },
+      "nat": "DE"
+    }
+  ],
+  "info": {
+    "seed": "860e2b57a3854eee",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
