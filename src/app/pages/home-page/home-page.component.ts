@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 //import router 
 import { Router, NavigationExtras } from '@angular/router';
 import { IContact } from 'src/app/models/contact.interface';
+import { IRandomContact } from 'src/app/models/randomuser';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -10,7 +11,7 @@ import { IContact } from 'src/app/models/contact.interface';
 })
 export class HomePageComponent implements OnInit {
 
-  contactSelected: IContact | undefined;
+  contactSelected: IRandomContact | undefined;
   token: string | null ="";
 
   constructor( private router: Router) { }

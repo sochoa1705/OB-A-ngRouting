@@ -32,8 +32,11 @@ export class RandomUserService {
     );
   }
   //get method to get random users from randomuser.me
-  getRandomContacts(n:number): Observable<any>{
-    const opt: HttpParams = new HttpParams().set('results', n.toString());
+  getRandomContacts(n:number, gender?:string): Observable<any>{
+    let opt: HttpParams = new HttpParams().set('results', n.toString());
+    if(gender){
+      opt = opt.append("gender",gender)
+    }
     return this.http.get('https://randomuser.me/api/', {params: opt}).pipe(
       retry(2),
       catchError(this.hanldeError)

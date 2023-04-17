@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import Activeated Route
 import { ActivatedRoute } from '@angular/router';
 import { IContact } from 'src/app/models/contact.interface';
+import { IRandomContact } from 'src/app/models/randomuser';
 
 @Component({
   selector: 'app-contact-detail-page',
@@ -11,13 +12,8 @@ import { IContact } from 'src/app/models/contact.interface';
 export class ContactDetailPageComponent implements OnInit {
 
   id: any | undefined;
-  contact: IContact = {
-    id: 0,
-    name: '',
-    lastname: '',
-    mail: '',
-    gender: ''
-  };
+  contact: IRandomContact | undefined;
+  
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

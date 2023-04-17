@@ -2,7 +2,7 @@
 
 <!-- Build a view that list the contact list and navigate to
 detail page -->
-<div *ngFor="let contact of contactList; let i-index"class="blueTable">
+<div *ngFor="let contact of randomContactList; let i-index"class="blueTable">
     <div class="contact">
         <table  class="blueTable">
             <thead>
@@ -15,10 +15,10 @@ detail page -->
             </thead>
             <tbody>
                 <tr>
-                    <td>{{contact.name}}</td>
-                    <td>{{contact.lastname}}</td>
-                    <td>{{contact.mail}}</td>
-                    <td> <a routerLink="/contacts/{{contact.id}}" [state]="{data: contact}">Detail</a></td>
+                    <td>{{contact.name.first}}</td>
+                    <td>{{contact.name.last}}</td>
+                    <td>{{contact.email}}</td>
+                    <td> <a routerLink="/contacts/{{contact.id.name}}" [state]="{data: contact, filter:filterGender}">Detail</a></td>
                 </tr>
             </tbody>
             <tfoot>
