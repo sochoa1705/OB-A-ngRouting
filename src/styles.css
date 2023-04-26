@@ -3871,3 +3871,6 @@ select.mat-mdc-form-field-input-control:not(.mat-mdc-native-select-inline)
   letter-spacing: 0.0073529412em;
   margin: 0 0 64px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

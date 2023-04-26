@@ -18,7 +18,7 @@ detail page -->
                     <td>{{contact.name.first}}</td>
                     <td>{{contact.name.last}}</td>
                     <td>{{contact.email}}</td>
-                    <td> <a routerLink="/contacts/{{contact.id.name}}" [state]="{data: contact, filter:filterGender}">Detail</a></td>
+                    <td> <a routerLink="/dashboard/contacts/{{contact.id.name}}" [state]="{data: contact, filter:filterGender}">Detail</a></td>
                 </tr>
             </tbody>
             <tfoot>
@@ -35,4 +35,5 @@ detail page -->
 <br>
 <br>
 <br>
+<a mat-raised-button routerLink="/dashboard">Back</a>
 

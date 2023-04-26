@@ -7,40 +7,48 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { RandomCotactPageComponent } from './pages/random-contact-page/random-contact-page.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TaskPageComponent } from './pages/task-page/task-page.component';
 
 const routes: Routes = [
   //main route to home
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'login',
     component: LoginPageComponent
   },
   {
-    path: 'home',
-    component: HomePageComponent,
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
     children: [
       {
-        path: 'children',
-        component: HomePageComponent
+        path: '',
+        component: HomePageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'contacts',
+        component: ContactsPageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        //subroute passing id its not a query param
+        path: 'contacts/:id',
+        component: ContactDetailPageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path:'random',
+        component: RandomCotactPageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'tasks',
+        component: TaskPageComponent,
+        canActivate: [AuthGuard]
       }
-    ],
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'contacts',
-    component: ContactsPageComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    //subroute passing id its not a query param
-    path: 'contacts/:id',
-    component: ContactDetailPageComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path:'random',
-    component: RandomCotactPageComponent,
-    canActivate: [AuthGuard]
+    ]
   },
   {
     path: '**',

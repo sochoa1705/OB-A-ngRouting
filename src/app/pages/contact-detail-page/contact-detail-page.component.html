@@ -13,9 +13,9 @@
 </ng-template>
 
 <ng-container *ngIf=" contact?.gender === 'female'|| contact?.gender == 'male'">
-    <a routerLink="/contacts" [queryParams]="{filter:contact?.gender}">Regresar</a>
+    <a  mat-stroked-button routerLink="/dashboard/contacts" [queryParams]="{filter:contact?.gender}">Regresar</a>
 </ng-container>
 <hr>
-<a routerLink="/contacts" [queryParams]="{filter:'all'}">See Contacts</a>
+<a mat-stroked-button routerLink="/dashboard" [queryParams]="{filter:'all'}">See Contacts</a>
 
 

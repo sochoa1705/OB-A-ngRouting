@@ -30,7 +30,7 @@ export class LoginPageComponent implements OnInit {
       (response:any) => {
         if(response.token){
           sessionStorage.setItem('isLoggedInToken', response.token);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         }
 
       },

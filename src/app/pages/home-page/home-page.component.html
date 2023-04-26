@@ -20,10 +20,13 @@
 <hr>
 <div>
     <span>
-        <a routerLink="/contacts" [queryParams]="{filter: 'female'}">Female Friends |</a>
+        <a mat-stroked-button routerLink="/dashboard/contacts" [queryParams]="{filter: 'female'}">Female Friends</a>
     </span>
     <span>
-        <a routerLink="/contacts" [queryParams]="{filter: 'male'}"> Male Friends</a>
+        |
+    </span>
+    <span>
+        <a mat-stroked-button routerLink="/dashboard/contacts" [queryParams]="{filter: 'male'}"> Male Friends</a>
     </span>
 </div>
 

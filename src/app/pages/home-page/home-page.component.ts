@@ -32,7 +32,7 @@ navToContacts(): void {
         filter: 'all'
       }
     }
-    this.router.navigate(['/contacts'], navigationExtras);
+    this.router.navigate(['dashboard/contacts'], navigationExtras);
   }
 
 
